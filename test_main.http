@@ -1,11 +1,29 @@
 # Test your FastAPI endpoints
 
-GET http://127.0.0.1:8000/
-Accept: application/json
-
-####
-#
-#GET http://127.0.0.1:8000/hello/furat
+#GET http://127.0.0.1:8000/
 #Accept: application/json
 #
-####
+#####
+##
+##GET http://127.0.0.1:8000/hello/furat
+##Accept: application/json
+##
+#####
+#POST http://127.0.0.1:8000
+#Content-Type:
+#______________________________--
+
+### Test welcome endpoint
+GET http://127.0.0.1:8000/api/v1/
+Accept: application/json
+
+### Test file upload
+POST http://127.0.0.1:8000/api/v1/data/upload/project123
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="test.txt"
+Content-Type: text/plain
+
+This is test file content.
+--boundary--
