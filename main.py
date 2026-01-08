@@ -1,3 +1,5 @@
+from fastapi import FastAPI
+
 # app = FastAPI()
 #
 #
@@ -13,7 +15,7 @@
 from fastapi import FastAPI
 from dotenv import load_dotenv
 load_dotenv(".env")
-from src.routes import base
+from routes import base
 app = FastAPI()
 
 app.include_router(base.base_router)
