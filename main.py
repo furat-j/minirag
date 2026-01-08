@@ -13,10 +13,7 @@ from fastapi import FastAPI
 #     return {"message": f"Hello {name}"}
 
 from fastapi import FastAPI
+from routes import base
 app = FastAPI()
 
-@app.get("/welcome")
-async def welcome():
-    return {
-        "message": "Hello World!"
-    }
+app.include_router(base.base_router)
